@@ -62,7 +62,8 @@ func main() {
 	go func() {
 		for {
 			now := time.Now().Format(time.RFC1123)
-			app.EmitEvent("time", now)
+			app.EmitEvent("time-app", now)
+			app.EmitEvent("time-charts", now)
 			time.Sleep(time.Second)
 		}
 	}()
